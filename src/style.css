@@ -1,0 +1,450 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: linear-gradient(145deg, #1b1b2f, #0f0f1d);
+  color: #f0f0f0;
+  padding-top: 80px;
+  line-height: 1.6;
+}
+
+/* ----------------------------
+   NAVBAR
+---------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  /*background: rgba(0, 0, 0, 0.85);*/
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #00f6ff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #00f6ff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 70px;
+  right: 2rem;
+  /*background: rgba(0, 0, 0, 0.85);*/
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #00f6ff;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff00e6;
+}
+
+/* ----------------------------
+   DESKTOP NAVBAR
+---------------------------- */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex !important;
+    position: static;
+    background: transparent;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+    box-shadow: none;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+}
+
+/* ----------------------------
+   MAIN CONTENT CONTAINER
+---------------------------- */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+}
+
+/* ----------------------------
+   TYPOGRAPHY
+---------------------------- */
+h1, h2, h3 {
+  color: #00f6ff;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #e0e0e0;
+}
+
+a {
+  color: #00f6ff;
+}
+
+a:hover {
+  color: #ff00e6;
+  transition: 0.3s;
+}
+
+/* ----------------------------
+   FOOTER
+---------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 2rem;
+}
+
+.accordion-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.accordion-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00f6ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.accordion-toggle:hover {
+  color: #ff00e6;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  padding: 0 1rem;
+}
+
+.accordion-item.open .accordion-content {
+  max-height: 1000px; /* big enough for your iframe */
+  padding: 1rem;
+}
+
+.accordion-content iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 36px;
+  width: auto;
+  max-height: 60px;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.25);
+}
+
+.hero-title {
+  text-align: center;
+}
+
+.logo-explainer {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+}
+
+.logo-hero-img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+.logo-explainer h1 {
+  color: #00f6ff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-explainer p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+}
+
+.back-btn-container {
+  margin-top: 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  color: #00f6ff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #00f6ff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #00f6ff;
+  color: #0f0f1d;
+}
+
+.home-cover {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-contact {
+  font-size: 2.2rem; /* Try 3rem if you want it huge */
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.hero-contact p {
+  margin: 0.4rem 0;
+  font-size: 1.2rem;
+}
+
+.hero-title {
+  font-size: 3.2rem; /* Was probably 2.8rem — go bigger! */
+  font-weight: 600;
+  color: #00f6ff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem; /* Was maybe 1.4rem — this is more elegant */
+  font-weight: 400;
+  color: #afd3d4;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+  padding: 2rem;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card a {
+  color: #00f6ff;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+  color: #ff00e6;
+}
+
+.contact-note {
+  color: #aaa;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.fade-in-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.fade-in-1, .fade-in-2, .fade-in-3 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.fade-in-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-in-2 {
+  animation-delay: 0.5s;
+}
+
+.fade-in-3 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state */
+/* Fade logic */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Splash screen styling */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0f0f1d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded #splash-screen {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease 0.3s; /* 👈 adds slight delay for buttery fade-out */
+}
+
+#splash-screen img {
+  max-width: 120px;
+  filter: drop-shadow(0 0 10px #00f6ff80);
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
