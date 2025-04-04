@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ✅ Only continue splash logic if #splash-screen exists
+  // ✅ Splash Screen Fade Logic
   const splash = document.getElementById("splash-screen");
   if (splash) {
     document.body.classList.remove("fade-out");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 800);
   }
 
-  // ✅ Same thing with accordion logic
+  // ✅ Accordion Logic (only run if present)
   const accordions = document.querySelectorAll(".accordion-toggle");
   if (accordions.length > 0) {
     accordions.forEach((accordion) => {
@@ -33,6 +33,32 @@ document.addEventListener("DOMContentLoaded", function () {
           content.style.maxHeight = content.scrollHeight + "px";
         }
       });
+    });
+  }
+});
+
+// ===========================
+// PAGE TRANSITION BETWEEN LINKS
+// ===========================
+const pageLinks = document.querySelectorAll("a[href]");
+pageLinks.forEach((link) => {
+  const href = link.getAttribute("href");
+
+  if (href && href.endsWith(".html")) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const splash = document.getElementById("splash-screen");
+      if (splash) {
+        splash.classList.add("show");
+      }
+
+      document.body.classList.remove("fade-in");
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location = href;
+      }, 600);
     });
   }
 });
