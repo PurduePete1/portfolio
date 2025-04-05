@@ -5,30 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logo Meaning | Josh Watjen</title>
   <link rel="stylesheet" href="src/style.css" />
+  <script src="src/script.js" defer></script> <!-- ✅ Don't forget this! -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body class="fade-out">
+
+<body class="fade-out preload">
+  <canvas id="background-canvas"></canvas>
+
+  <!-- Splash screen -->
   <div id="splash-screen">
     <img src="assets/logo.png" alt="Loading Logo" />
   </div>
-  <main class="logo-explainer">
-    <div class="logo-hero">
-      <img src="assets/logo.png" alt="Logo Explanation" class="logo-hero-img" />
-      <h1>The Story Behind the Logo</h1>
-    </div>
-    
-    <p>
-      The circle represents unity and connection — at the center of everything I do in education.
-      The diamond symbolizes strength and clarity — a reminder to lead with integrity, even under pressure.
-      The four dots represent the people I serve: students, families, staff, and community. Together, they create a system worth protecting and nurturing.
-    </p>
 
-    <p>
-      It's not just a symbol — it's a daily reminder of why I lead, who I lead for, and the legacy I aim to leave behind.
-    </p>
+  <div class="site-wrapper">
+    <main class="logo-explainer">
+      <div class="logo-hero">
+        <img src="assets/logo.png" alt="Logo Explanation" class="logo-hero-img" />
+        <h1>The Story Behind the Logo</h1>
+      </div>
+      
+      <p>
+        The circle represents unity and connection — at the center of everything I do in education.<br/>
+        The diamond symbolizes strength and clarity — a reminder to lead with integrity, even under pressure.<br/>
+        The four dots represent the people I serve: students, families, staff, and community. Together, they create a system worth protecting and nurturing.
+      </p>
 
-    <div class="back-btn-container">
-      <a href="index.html" class="back-btn">← Back</a>
-    </div>
-  </main>
+      <p>
+        It's not just a symbol — it's a daily reminder of why I lead, who I lead for, and the legacy I aim to leave behind.
+      </p>
+
+      <div class="back-btn-container">
+        <a href="index.html" class="back-btn">← Back</a>
+      </div>
+    </main>
+    <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Josh Watjen | github.com/purduePete1/</p>
+  </footer>
+  </div>
 </body>
 </html>
